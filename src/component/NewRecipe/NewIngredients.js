@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import { Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
@@ -7,8 +8,8 @@ import "./NewIngredients.css";
 function NewIngredients(props) {
   const [IngredientFields, setIngredientField] = useState([
     {
-      uuid: Math.random(),
-      amount: "",
+      uuid: uuidv4(),
+      amount: 0,
       measurement: "",
       name: "",
     },
@@ -17,7 +18,7 @@ function NewIngredients(props) {
   const addIngredientHandler = () => {
     setIngredientField([
       ...IngredientFields,
-      { uuid: Math.random(), amount: 0, measurement: "", name: "" },
+      { uuid: uuidv4(), amount: 0, measurement: "", name: "" },
     ]);
   };
 
@@ -26,7 +27,22 @@ function NewIngredients(props) {
     i.splice(index, 1);
     setIngredientField(i);
   };
-  console.log(IngredientFields);
+
+  const handleInputChange = (event) => {
+    const uuid = event.target.attributes.dataid.value;
+    const name = event.target.name;
+    const val = event.target.value;
+    const newIngredients = IngredientFields.map(ingredient =>
+      ingredient.uuid === uuid ? { ...ingredient, [name]: val } : ingredient
+    );
+ 
+    setIngredientField(newIngredients);
+  }
+
+  useEffect(() => {
+    props.onIngredientsChange(IngredientFields);
+  }, [ IngredientFields ]);
+
   return (
     <div className="ingredient__section">
       <hr />
@@ -35,15 +51,15 @@ function NewIngredients(props) {
         <div className="row mb-3" key={index}>
           <div className="col">
             <Form.Label className="mb-1">Name</Form.Label>
-            <Form.Control type="text" />
+            <Form.Control type="text" name="name" onChange={ handleInputChange } dataid={ field.uuid } />
           </div>
           <div className="col">
             <Form.Label className="mb-1">Amount</Form.Label>
-            <Form.Control type="number" min="1" />
+            <Form.Control type="number" min="1" name="amount" onChange={ handleInputChange } dataid={ field.uuid }  />
           </div>
           <div className="col">
             <Form.Label className="mb-1">Measurement</Form.Label>
-            <Form.Control type="text" />
+            <Form.Control type="text" name="measurement" onChange={ handleInputChange } dataid={ field.uuid }  />
           </div>
           <div className="col">
             {IngredientFields.length - 1 === index && (

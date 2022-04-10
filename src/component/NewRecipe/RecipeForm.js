@@ -27,6 +27,14 @@ function RecipeForm() {
   const cookingChangeHandler = (event) => {
     setEnteredDescription(event.target.value);
   };
+  const handleOnIngredientChange = (ingredients) => {
+    setEnteredIngredients(ingredients);
+    console.log('handleOnIngredientChange', ingredients)
+  }
+  const handleonDirectionsChange = (directions) => {
+    setEnteredIngredients(directions);
+    console.log('handleonDirectionsChange', directions)
+  }
 
   return (
     <div>
@@ -78,8 +86,8 @@ function RecipeForm() {
             />
           </div>
         </div>
-        <NewIngredients />
-        <NewDirections />
+        <NewIngredients onIngredientsChange={ handleOnIngredientChange }/>
+        <NewDirections onDirectionsChange={ handleonDirectionsChange } />
       </Form>
     </div>
   );
