@@ -1,0 +1,19 @@
+.instructionsList {
+  list-style: none;
+  padding: 0;
+}
+.instructionsList li {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.badge {
+  font-family: "Playfair Display", serif;
+  background-color: #f92c85 !important;
+  /* background-color: #5ebec4 !important; */
+  color: #dfdfdf !important;
+  border: 1.5px solid #5ebec4;
+}
+.instructionsList h4 {
+  font-family: "Playfair Display", serif;
+  color: #3b3b3b;
+}

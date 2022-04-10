@@ -1,0 +1,34 @@
+.imgDetailsCard {
+  margin: 20px 0 40px;
+  overflow: hidden;
+  border-radius: 30px 30px;
+  border: 5px solid #5ebec4;
+}
+.imgDetailsCard img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.recipeDetails .recipeDetailDes {
+  text-align: left;
+}
+.recipeDetailDes h2 {
+  color: #5ebec4;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+}
+.ingredient__section h3 {
+  color: #5ebec4;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+}
+.recipeDetailDes .postedon {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 5px 0;
+}
+.ingredient__section {
+  text-align: left;
+}

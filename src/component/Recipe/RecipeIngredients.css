@@ -1,0 +1,33 @@
+.ingredientsList {
+  list-style: none;
+  padding: 0;
+  /* -moz-column-count: 2;
+  -moz-column-gap: 5px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 5px;
+  column-count: 2;
+  column-gap: 5px; */
+}
+.ingredientsList li {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.checkList {
+  color: #5ebec4;
+}
+.borderedDetails {
+  border: solid 2px #f92c85;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.ingredientsTable {
+  border: 2px solid #5ebec4 !important;
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+.ingredientsTable th {
+  border-bottom: 3px solid #5ebec4 !important;
+  font-size: 18px;
+}

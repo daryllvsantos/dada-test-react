@@ -1,0 +1,17 @@
+.fixAdd {
+  margin-left: -10px;
+  margin-top: 5px;
+  z-index: 999;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #f92c85;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 10px 15px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  cursor: pointer;
+  display: block;
+}
