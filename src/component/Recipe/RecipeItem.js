@@ -13,7 +13,15 @@ function RecipeItem(props) {
     <div>
       <Link to={`/recipe/${props.uuid}`}>
         <div className="imgContainer" key={props.uuid}>
-          <img className="card-img-top" src={base + props.image} alt="Food" />
+          <img
+            className="card-img-top"
+            src={
+              props.image.length > 0
+                ? base + props.image
+                : "https://via.placeholder.com/250"
+            }
+            alt="Food"
+          />
         </div>
         <div className="card-body">
           <h5 className="card-title">{props.title}</h5>

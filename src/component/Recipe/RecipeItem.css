@@ -16,10 +16,15 @@
 }
 @media only screen and (min-width: 320px) {
   .recipeCard img {
-    height: 50vw;
+    height: 70vw;
   }
 }
 @media only screen and (min-width: 600px) {
+  .recipeCard img {
+    height: 50vw;
+  }
+}
+@media only screen and (min-width: 768px) {
   .recipeCard img {
     height: 25vw;
   }

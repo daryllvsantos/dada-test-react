@@ -6,6 +6,10 @@ import RecipeDetails from "./component/Recipe/RecipeDetails";
 function App() {
   return (
     <Router>
+      <Link to="/">
+        <h2 className="text-center logo">Recipe's</h2>
+      </Link>
+      <hr className="shadow-lg" />
       <div className="App container">
         <Switch>
           <Route exact path="/">

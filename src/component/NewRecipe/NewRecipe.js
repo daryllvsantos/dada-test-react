@@ -22,7 +22,7 @@ function NewRecipe() {
           <Modal.Title>Add Recipe</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <RecipeForm />
+          <RecipeForm onModalBhv={handleClose} />
         </Modal.Body>
       </Modal>
     </div>

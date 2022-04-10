@@ -30,9 +30,6 @@ function Home() {
 
   return (
     <div className="home">
-      <h2>Recipe's</h2>
-      <hr className="shadow-lg" />
-
       {apiLoaded && <RecipesList items={recipesList} />}
 
       {!apiLoaded && (
