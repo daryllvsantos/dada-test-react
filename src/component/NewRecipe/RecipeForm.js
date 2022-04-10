@@ -38,7 +38,7 @@ function RecipeForm() {
 
   return (
     <div>
-      <Form>
+      <Form onSu>
         <div className="row mb-3">
           <div className="col">
             <Form.Label className="mb-1">Title</Form.Label>
