@@ -41,11 +41,9 @@ function RecipeForm(props) {
   };
   const handleOnIngredientChange = (ingredients) => {
     setEnteredIngredients(ingredients);
-    // console.log("handleOnIngredientChange", ingredients);
   };
   const handleonDirectionsChange = (directions) => {
     setEnteredDirections(directions);
-    // console.log("handleonDirectionsChange", directions);
   };
 
   const handleSubmit = (event) => {
@@ -77,14 +75,7 @@ function RecipeForm(props) {
       directionssCheck;
 
     if (required_fields) {
-      // setModalBhv(false);
-      // props.onModalBhv(modalBhv);
-      console.log("required " + required_fields);
       addRecipe();
-    } else {
-      console.log("required" + required_fields);
-      console.log(validated);
-      console.log("validity " + form.checkValidity());
     }
 
     setValidated(true);
@@ -116,8 +107,6 @@ function RecipeForm(props) {
           headers: { "Content-Type": "application/json" },
         }
       );
-      console.log(response.data);
-      console.log(JSON.stringify(response));
       setModalBhv(false);
       setLoading(false);
       props.onModalBhv(modalBhv);

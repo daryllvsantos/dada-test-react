@@ -51,8 +51,6 @@ function NewDirections(props) {
   useEffect(() => {
     props.onDirectionsChange(directionFields);
   }, [directionFields]);
-
-  // console.log(directionFields);
   return (
     <div className="direction__section">
       <hr />

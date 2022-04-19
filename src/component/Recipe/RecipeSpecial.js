@@ -8,8 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./RecipeSpecial.css";
 
 function RecipeSpecial(props) {
-  // console.log(props.id);
-
   const [searchSpecial, setSearchSpecial] = useState("");
   const [specialList, setSpecialList] = useState("");
 
@@ -20,8 +18,6 @@ function RecipeSpecial(props) {
           .get(base + "/specials?ingredientId=" + props.id)
           .then((res) => {
             setSpecialList(res.data);
-            // return res.data.ingredientId;
-            // console.log(res.data);
           });
       } catch (err) {
         if (err.response) {
@@ -37,36 +33,8 @@ function RecipeSpecial(props) {
     getSpecial();
   }, []);
 
-  // console.log(specialList);
-  // console.log(props.id);
-
-  // const filteredRecipes = specialList.filter((specialData) => {
-  //   if (specialList.uiid === props.id) {
-  //     console.log(specialData.uiid);
-  //   }
-  //   // recipe.title.toLowerCase().includes(searchRecipe.toLowerCase())
-  // });
-
-  // const popover = (
-  //   <Popover id="popover-basic">
-  //     <Popover.Header as="h3">Popover right</Popover.Header>
-  //     <Popover.Body>
-  //       And here's some <strong>amazing</strong> content. It's very engaging.
-  //       right?
-  //     </Popover.Body>
-  //   </Popover>
-  // );
-
-  // const Example = () => (
-  //   <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-  //     <Button variant="success">Click me to see</Button>
-  //   </OverlayTrigger>
-  // );
-
   return (
     <div className="badge rounded-pill popover__wrapper">
-      {/* Special Offer. Click me
-      <FontAwesomeIcon icon={faExclamation} /> */}
       {specialList ? (
         specialList.map((special) => {
           return (

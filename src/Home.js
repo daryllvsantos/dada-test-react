@@ -5,7 +5,6 @@ import RecipesList from "./component/Recipe/RecipesList";
 function Home() {
   const [recipesList, setRecipesList] = useState([]);
   const [apiLoaded, setApiLoaded] = useState(false);
-  // const [isPending, setPending] = useState(true);
 
   useEffect(() => {
     const getRecipes = async () => {

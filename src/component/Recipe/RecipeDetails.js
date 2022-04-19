@@ -26,10 +26,7 @@ function RecipeDetails() {
     try {
       await api.get(base + "/recipes/" + uuid).then((res) => {
         setRecipeList(res.data);
-        // setImageDisplay(res.data.images);
       });
-      // setImageDisplay();
-      // console.log(imageDisplay);
       setApiLoaded(true);
     } catch (err) {
       if (err.response) {
