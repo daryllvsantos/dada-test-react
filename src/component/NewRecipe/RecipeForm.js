@@ -87,9 +87,9 @@ function RecipeForm(props) {
       title: enteredTitle,
       description: enteredDescription,
       images: {
-        full: "",
-        medium: "",
-        small: "",
+        full: "/img/dummy.jpg",
+        medium: "/img/dummy.jpg",
+        small: "/img/dummy.jpg",
       },
       servings: enteredServings,
       prepTime: enteredPrepTime,
