@@ -4,16 +4,20 @@ import RecipesList from "./component/Recipe/RecipesList";
 
 function Home() {
   const [recipesList, setRecipesList] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [apiLoaded, setApiLoaded] = useState(false);
 
   useEffect(() => {
     const getRecipes = async () => {
+      setLoading(true);
       try {
         await api.get(base + "/recipes").then((res) => {
           setRecipesList(res.data);
         });
         setApiLoaded(true);
+        setLoading(false);
       } catch (err) {
+        setLoading(false);
         if (err.response) {
           //not in the 200 response range
           console.log(err.respones.data);
@@ -31,9 +35,15 @@ function Home() {
     <div className="home">
       {apiLoaded && <RecipesList items={recipesList} />}
 
-      {!apiLoaded && (
+      {loading && (
         <div className="loading">
           <div className="loader"></div>
+        </div>
+      )}
+
+      {!apiLoaded && (
+        <div>
+          <p>No data retrieve!</p>
         </div>
       )}
     </div>
